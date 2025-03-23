@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /assets
+Disallow: /lib
+Disallow: /data
+Disallow: /sendemail
+Allow: index.html
+
+Sitemap: https://eliasdh.com/sitemap.xml
+
+Crawl-delay: 5
