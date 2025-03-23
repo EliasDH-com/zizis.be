@@ -175,3 +175,26 @@
     transform: scale(1.05);
 }
 /* Main */
+
+/* Footer */
+.index-footer {
+    left: 35%;
+    right: 35%;
+}
+/* Footer */
+
+/* Index Media Queries */
+@media screen and (max-width: 650px) {
+    .index-footer {
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .index-footer {
+        left: 5%;
+        right: 5%;
+    }
+}
+/* Index Media Queries */

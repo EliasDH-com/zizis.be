@@ -5,7 +5,7 @@
  */
 
 import { NgModule } from '@angular/core';
-import { ContextMenuComponent } from './contextmenu/contextmenu.component';;
+import { ContextMenuComponent } from './contextmenu/contextmenu.component';
 
 @NgModule({
     imports: [

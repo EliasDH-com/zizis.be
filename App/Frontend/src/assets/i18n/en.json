@@ -1,0 +1,28 @@
+{
+  "INDEX": {
+    "TITLE": "Hairfashion Zizis",
+    "SUBTITLE": "Your hairdresser in the heart of Boechout",
+    "CALL_TO_ACTION": "Call for an appointment",
+    "CONTACT_TITLE": "Contact Us",
+    "LOCATION": "Location",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "OPENING_HOURS_TITLE": "Opening Hours",
+    "OPENING_HOURS": {
+        "MONDAY": "Monday: Closed",
+        "TUESDAY": "Tuesday: 08:30 - 14:00",
+        "WEDNESDAY": "Wednesday: 08:30 - 14:00",
+        "THURSDAY": "Thursday: 08:30 - 20:00",
+        "FRIDAY": "Friday: 08:30 - 20:00",
+        "SATURDAY": "Saturday: 07:00 - 16:00",
+        "SUNDAY": "Sunday: Closed"
+    },
+    "OPENING_HOURS_CALL": "Call us to make an appointment!",
+    "GALLERY_TITLE": "Our Gallery"
+  },
+  "CONTEXTMENU": {
+    "TRANSLATE1": "Copy link address",
+    "TRANSLATE2": "Copy to clipboard",
+    "TRANSLATE3": "Switch theme"
+  }
+}

@@ -9,6 +9,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../services/language.service';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-index',
@@ -17,10 +19,13 @@ import { SharedModule } from '../shared/shared.module';
     imports: [TranslatePipe, CommonModule, SharedModule],
     standalone: true
 })
+
 export class IndexComponent implements OnInit {
     dropdownOpen: boolean = false;
-    currentLanguage: string = 'nl'; // Standaard Nederlands
-    currentTheme: string = 'light'; // Standaard licht thema
+    currentLanguage: string = 'nl';
+    currentTheme: string = 'light';
+    footerContent: SafeHtml | null = null;
+    currentYear: number;
 
     settingsConfig = {
         languages: [
@@ -39,12 +44,35 @@ export class IndexComponent implements OnInit {
         'assets/media/images/gallery/photo5.png'
     ];
 
-    constructor(private languageService: LanguageService, private translate: TranslateService) {}
+    constructor(
+        private languageService: LanguageService,
+        private translate: TranslateService,
+        private http: HttpClient,
+        private sanitizer: DomSanitizer
+    ) {
+        this.currentYear = new Date().getFullYear();
+    }
 
     ngOnInit(): void {
         this.languageService.checkAndSetLanguage();
         this.translate.setDefaultLang('nl');
         this.setTheme(this.currentTheme);
+        this.loadFooter();
+    }
+
+    loadFooter() {
+        const footerUrl = 'https://eliasdh.com/assets/includes/external-footer.html';
+        this.http.get(footerUrl, { responseType: 'text' }).subscribe({
+            next: (data) => {
+                const updatedFooter = data.replace('{{ currentYear }}', this.currentYear.toString());
+                this.footerContent = this.sanitizer.bypassSecurityTrustHtml(updatedFooter);
+            },
+            error: (err) => {
+                this.footerContent = this.sanitizer.bypassSecurityTrustHtml(
+                    '<p>Failed to load footer content. Please try again later.</p>'
+                );
+            }
+        });
     }
 
     changeLanguage(languageCode: string) {
@@ -60,7 +88,7 @@ export class IndexComponent implements OnInit {
 
     isToday(day: string): boolean {
         const today = new Date();
-        const days = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday', 'Saturday'];
         return day === days[today.getDay()];
     }
 

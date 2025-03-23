@@ -25,30 +25,32 @@
         </div>
     </header>
     <main class="index-main">
-        <section class="index-main-section1">
-            <h2>{{ 'INDEX.CONTACT_TITLE' | translate }}</h2>
-            <p>
-                <strong>{{ 'INDEX.LOCATION' | translate }}:</strong> 
-                <a href="https://www.google.com/maps/place/Kapper+Zizis/@51.1574732,4.5160405,664m/data=!3m1!1e3!4m6!3m5!1s0x47c3fbc98241171d:0x963f447ba2993b24!8m2!3d51.1578719!4d4.5153942!16s%2Fg%2F11c0wc2ntk?authuser=0&entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank">
-                    Provinciesteenweg 557/N10, 2530 Boechout
-                </a>
-            </p>
-            <p><strong>{{ 'INDEX.PHONE' | translate }}:</strong> <a href="tel:+32123456789"> +32 477 53 86 92</a></p>
-            <p><strong>{{ 'INDEX.EMAIL' | translate }}:</strong> <a href="mailto:anja.oliviers&#64;telenet.be"> anja.oliviers&#64;telenet.be</a></p>
-        </section>
-        <section class="index-main-section2">
-            <h2>{{ 'INDEX.OPENING_HOURS_TITLE' | translate }}</h2>
-            <ul class="index-main-hours-list">
-                <li [class.today]="isToday('Maandag')">{{ 'INDEX.OPENING_HOURS.MONDAY' | translate }}</li>
-                <li [class.today]="isToday('Dinsdag')">{{ 'INDEX.OPENING_HOURS.TUESDAY' | translate }}</li>
-                <li [class.today]="isToday('Woensdag')">{{ 'INDEX.OPENING_HOURS.WEDNESDAY' | translate }}</li>
-                <li [class.today]="isToday('Donderdag')">{{ 'INDEX.OPENING_HOURS.THURSDAY' | translate }}</li>
-                <li [class.today]="isToday('Vrijdag')">{{ 'INDEX.OPENING_HOURS.FRIDAY' | translate }}</li>
-                <li [class.today]="isToday('Zaterdag')">{{ 'INDEX.OPENING_HOURS.SATURDAY' | translate }}</li>
-                <li [class.today]="isToday('Zondag')">{{ 'INDEX.OPENING_HOURS.SUNDAY' | translate }}</li>
-            </ul>
-            <p>{{ 'INDEX.OPENING_HOURS_CALL' | translate }}</p>
-        </section>
+        <div class="index-main-left">
+            <section class="index-main-section1">
+                <h2>{{ 'INDEX.CONTACT_TITLE' | translate }}</h2>
+                <p>
+                    <strong>{{ 'INDEX.LOCATION' | translate }}:</strong> 
+                    <a href="https://www.google.com/maps/place/Kapper+Zizis/@51.1574732,4.5160405,664m/data=!3m1!1e3!4m6!3m5!1s0x47c3fbc98241171d:0x963f447ba2993b24!8m2!3d51.1578719!4d4.5153942!16s%2Fg%2F11c0wc2ntk?authuser=0&entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank">
+                        Provinciesteenweg 557/N10, 2530 Boechout
+                    </a>
+                </p>
+                <p><strong>{{ 'INDEX.PHONE' | translate }}:</strong> <a href="tel:+32123456789"> +32 477 53 86 92</a></p>
+                <p><strong>{{ 'INDEX.EMAIL' | translate }}:</strong> <a href="mailto:anja.oliviers&#64;telenet.be"> anja.oliviers&#64;telenet.be</a></p>
+            </section>
+            <section class="index-main-section2">
+                <h2>{{ 'INDEX.OPENING_HOURS_TITLE' | translate }}</h2>
+                <ul class="index-main-hours-list">
+                    <li [class.today]="isToday('Monday')">{{ 'INDEX.OPENING_HOURS.MONDAY' | translate }}</li>
+                    <li [class.today]="isToday('Tuesday')">{{ 'INDEX.OPENING_HOURS.TUESDAY' | translate }}</li>
+                    <li [class.today]="isToday('Wednesday')">{{ 'INDEX.OPENING_HOURS.WEDNESDAY' | translate }}</li>
+                    <li [class.today]="isToday('Thursday')">{{ 'INDEX.OPENING_HOURS.THURSDAY' | translate }}</li>
+                    <li [class.today]="isToday('Friday')">{{ 'INDEX.OPENING_HOURS.FRIDAY' | translate }}</li>
+                    <li [class.today]="isToday('Saturday')">{{ 'INDEX.OPENING_HOURS.SATURDAY' | translate }}</li>
+                    <li [class.today]="isToday('Sunday')">{{ 'INDEX.OPENING_HOURS.SUNDAY' | translate }}</li>
+                </ul>
+                <p>{{ 'INDEX.OPENING_HOURS_CALL' | translate }}</p>
+            </section>
+        </div>
         <section class="index-main-section3">
             <h2>{{ 'INDEX.GALLERY_TITLE' | translate }}</h2>
             <div class="index-main-section3-grid">
@@ -56,5 +58,8 @@
             </div>
         </section>
     </main>
+    <footer class="index-footer">
+        <div [innerHTML]="footerContent"></div>
+    </footer>
     <app-contextmenu></app-contextmenu>
 </body>
