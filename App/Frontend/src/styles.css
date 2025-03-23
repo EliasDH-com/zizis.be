@@ -1,0 +1,153 @@
+/**
+    * @author EliasDH Team
+    * @see https://eliasdh.com
+    * @since 01/01/2025
+**/
+
+/* Global Styles */
+:root[data-theme="dark"] {
+    --text: #f4f5f4;
+    --background: #020302;
+    --primary: #35ab17;
+    --secondary: #b8bac1;
+    --accent: #30b210;
+}
+
+:root[data-theme="light"] {
+    --text: #0a0b0a;
+    --background: #fbfdfb;
+    --primary: #72e854;
+    --secondary: #3e4047;
+    --accent: #6cef4b;
+}
+
+:root {
+    --facebook-color: #1877f2;
+    --x-color: #45494d;
+    --instagram-color: #c13584;
+    --github-color: #333333;
+    --gitlab-color: #fc6d26;
+    --linkedin-color: #0077b5;
+    --youtube-color: #ff0000;
+    --whatsapp-color: #25d366;
+    --telegram-color: #0088cc;
+    --discord-color: #7289da;
+    --twitch-color: #6441a5;
+}
+/* Global Styles */
+
+/* Global Cursor */
+* {
+    cursor: url('assets/svg/cursor-auto.svg'), auto;
+}
+
+.cursor-default {
+    cursor: url('assets/svg/cursor-default.svg'), default;
+}
+
+.cursor-pointer {
+    cursor: url('assets/svg/cursor-pointer.svg'), pointer;
+}
+
+.cursor-wait {
+    cursor: url('assets/svg/cursor-wait.svg'), wait;
+}
+
+.cursor-text {
+    cursor: url('assets/svg/cursor-text.svg'), text;
+}
+
+.cursor-move {
+    cursor: url('assets/svg/cursor-move.svg'), move;
+}
+/* Global Cursor */
+
+/* Global Fonts */
+@font-face { /* latin-ext */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(assets/fonts/poppins-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face { /* latin */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(assets/fonts/poppins-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Global Fonts */
+
+/* Global Body And HTML */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.global-body,
+.global-html {
+    font-family: 'Poppins', Arial;
+    background-color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+/* Global Body And HTML */
+
+/* Global Selection */
+::selection {
+    background-color: var(--secondary);
+    color: var(--background);
+}
+/* Global Selection */
+
+/* Global Scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+/* Global Scrollbar */
+
+/* Global Dropdown */
+.global-dropdown {
+    visibility: visible;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    z-index: 2;
+}
+
+.global-dropdown-svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.global-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    background-color: var(--background);
+    border: 1px solid var(--primary);
+    border-radius: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.global-dropdown-menu li {
+    color: var(--text);
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.global-dropdown-menu li:hover,li.active  {
+    background-color: var(--accent);
+    color: var(--background);
+    border-radius: 16px;
+}
+/* Global Dropdown */

@@ -1,0 +1,21 @@
+{
+    "name": "Zizis",
+    "short_name": "Zizis",
+    "description": "This is the official website of Zizis.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fbfdfb",
+    "theme_color": "#72e854",
+    "icons": [
+        {
+            "src": "https://zizis.be/assets/media/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://zizis.be/assets/media/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

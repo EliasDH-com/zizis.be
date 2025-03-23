@@ -14,18 +14,6 @@ on:
       - main
 
 jobs:
-  build-push-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Login to GHCR
-        run: |
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u eliasdh-com --password-stdin
-      - name: Build/Push Backend Docker Image
-        run: |
-          docker build --push -t ghcr.io/eliasdh-com/XXX-backend:latest ./App/Backend
-
   build-push-frontend:
     runs-on: ubuntu-latest
     steps:
@@ -42,10 +30,10 @@ jobs:
       - name: Build Angular Application
         run: |
           cd ./App/Frontend
-          npm run prod
+            npm run build
       - name: Login to GHCR
         run: |
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u eliasdh-com --password-stdin
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u eliasdehondt --password-stdin
       - name: Build/Push Frontend Docker Image
         run: |
-          docker build --push -t ghcr.io/eliasdh-com/XXX-frontend:latest ./App/Frontend
+          docker build --push -t ghcr.io/eliasdh-com/zizis-frontend:latest ./App/Frontend

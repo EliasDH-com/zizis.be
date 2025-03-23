@@ -1,0 +1,7 @@
+User-agent: *
+Allow: index.html
+Allow: /assets/
+
+Sitemap: https://zizis.be/sitemap.xml
+
+Crawl-delay: 5
