@@ -36,4 +36,4 @@ jobs:
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u eliasdehondt --password-stdin
       - name: Build/Push Frontend Docker Image
         run: |
-          docker build --push -t ghcr.io/eliasdh-com/zizis-frontend:latest ./App/Frontend
+          docker build --push -t ghcr.io/eliasdh-com/zizisbe-frontend:latest ./App/Frontend
