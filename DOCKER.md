@@ -10,8 +10,8 @@
 
 - Pull the latest image and run the container
 ```bash
-sudo docker pull ghcr.io/eliasdh-com/zizis-frontend:latest
-sudo docker run --name zizis-frontend-container -p 8080:8080 -d ghcr.io/eliasdh-com/zizis-frontend:latest
+sudo docker pull ghcr.io/eliasdhcom/zizis-frontend:latest
+sudo docker run --name zizis-frontend-container -p 8080:8080 -d ghcr.io/eliasdhcom/zizis-frontend:latest
 ```
 
 - Check the logs
@@ -23,5 +23,5 @@ sudo docker logs zizis-frontend-container
 ```bash
 sudo docker stop zizis-frontend-container
 sudo docker rm zizis-frontend-container
-sudo docker rmi ghcr.io/eliasdh-com/zizis-frontend:latest
+sudo docker rmi ghcr.io/eliasdhcom/zizis-frontend:latest
 ```
